@@ -26,7 +26,7 @@ const displayChoices = function (choicesList) {
 
 const randomEl = choicesList => {
   ran = Math.trunc(Math.random() * choicesList.length);
-  console.log(ran);
+  // console.log(ran);
   res = choicesList[ran];
   result.textContent = res;
   return res;
@@ -45,17 +45,17 @@ const addItem = function (e) {
   displayChoices(dynaChoices);
 };
 
+let newDyna;
 // Remove item
 const removeItem = function (e) {
   e.preventDefault();
 
   if (
     inputNewItem.value !== '' &&
-    capitalized(inputNewItem.value) === dynaChoices.some(choice => choice)
+    dynaChoices.some(choice => capitalized(inputNewItem.value) === choice)
   ) {
     dynaChoices.splice(1, dynaChoices.indexOf(capitalized(inputNewItem.value)));
   }
-  console.log(dynaChoices);
   inputNewItem.value = '';
   displayChoices(dynaChoices);
 };
@@ -68,7 +68,7 @@ const loopResult = function () {
     // randomEl(choicesList);
     randomEl(dynaChoices);
     i++;
-    if (i < 20) {
+    if (i < 30) {
       loopResult();
     }
   }, 100);
