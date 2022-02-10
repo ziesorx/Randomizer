@@ -2,6 +2,43 @@
   padding: 0 2rem;
 }
 
+.newItem__input {
+  padding: 0.5rem 2rem;
+  font-size: 1.6rem;
+  font-family: inherit;
+  align-items: center;
+  text-align: center;
+  width: 12rem;
+  border-radius: 10rem;
+  color: inherit;
+  border: 1px solid rgb(0, 0, 0);
+  transition: all 0.3s;
+}
+
+.newItem__btn {
+  background-color: #f38451;
+  border: black;
+  color: white;
+  align-items: center;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 4rem;
+  cursor: pointer;
+  padding: 0.2rem 1.9rem;
+}
+
+.removeItem__btn {
+  background-color: #f38451;
+  border: black;
+  color: white;
+  align-items: center;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 4rem;
+  cursor: pointer;
+  padding: 0.2rem 1rem;
+}
+
 .main {
   min-height: 100vh;
   padding: 4rem 0;
@@ -10,6 +47,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .footer {
@@ -78,8 +116,16 @@
   padding: 0.2rem 8rem;
 }
 
+.result__input {
+  font-size: 100px;
+}
+
 .result {
   font-size: 30px;
+}
+
+.choices {
+  font-size: 20px;
 }
 
 .code {
