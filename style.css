@@ -105,6 +105,10 @@
   padding: 0.5rem 5rem;
 }
 
+.button:hover {
+  background-color: #3591b6;
+}
+
 .button1 {
   background-color: #f34a4a;
   border: black;
@@ -126,6 +130,10 @@
   cursor: pointer;
   padding: 0.5rem 5rem;
   margin: 3rem;
+}
+
+.mid-button:hover {
+  background-color: #37bb7b;
 }
 
 .result__input {

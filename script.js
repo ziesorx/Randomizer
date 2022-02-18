@@ -19,7 +19,7 @@ const rigged = ["pranakorn boat noodle"];
 //   'Swensen',
 // ];
 
-const dynaChoices = [];
+let dynaChoices = [];
 const midTownHots = [
   "mk",
   "pepper lunch",
@@ -46,6 +46,7 @@ const midTownHots = [
 ];
 
 const pushMid = () => {
+  dynaChoices = [];
   midTownHots.forEach((i) => dynaChoices.push(i));
   displayChoices(dynaChoices);
 };
