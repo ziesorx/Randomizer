@@ -1,3 +1,7 @@
+main {
+  overflow: hidden;
+}
+
 .container {
   padding: 0 2rem;
 }
