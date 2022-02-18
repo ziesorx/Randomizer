@@ -106,3 +106,5 @@ randombtn.addEventListener("click", () => {
   i = 0;
   loopResult();
 });
+
+console.log("fuck");
