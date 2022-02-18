@@ -94,6 +94,29 @@
   font-size: 1.5rem;
 }
 
+.btn2 {
+  background-color: #f3c64a;
+  border: black;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 4rem;
+  cursor: pointer;
+  padding: 0.5rem 5rem;
+  margin: 1rem;
+}
+.btn2:hover {
+  background-color: #aa882a;
+  border: black;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 4rem;
+  cursor: pointer;
+  padding: 0.5rem 5rem;
+  margin: 1rem;
+}
+
 .button {
   background-color: #4ac3f3;
   border: black;

@@ -9,6 +9,7 @@ const choice = document.querySelector(".choices__list");
 const midbut = document.querySelector(".mid-button");
 const btn = document.querySelectorAll(".btn");
 const ethbut = document.querySelector(".eth-button");
+const clear = document.querySelector(".clear-button");
 
 const rigged = ["pranakorn boat noodle"];
 
@@ -51,6 +52,11 @@ const ethyl = [
 ];
 
 const init = () => {
+  dynaChoices = [];
+  displayChoices(dynaChoices);
+};
+
+const clearDis = () => {
   dynaChoices = [];
   displayChoices(dynaChoices);
 };
@@ -119,6 +125,7 @@ const loopResult = function () {
 };
 
 init();
+clear.addEventListener("click", clearDis());
 midbut.addEventListener("click", () => {
   pushMid(midTownHots);
   btn.forEach((e) => e.classList.remove("active"));
