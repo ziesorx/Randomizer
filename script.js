@@ -7,6 +7,9 @@ let result = document.querySelector(".result__input");
 const randombtn = document.querySelector(".button");
 const choice = document.querySelector(".choices__list");
 const midbut = document.querySelector(".mid-button");
+const btn = document.querySelectorAll(".btn");
+const ethbut = document.querySelector(".eth-button");
+
 const rigged = ["pranakorn boat noodle"];
 
 let dynaChoices = [];
@@ -34,11 +37,27 @@ const midTownHots = [
   "korean town",
   "coco ichibanya",
 ];
-const ethyl = [];
 
-const pushMid = () => {
+const ethyl = [
+  "red",
+  "soju",
+  "beer",
+  "285",
+  "regency",
+  "tequila",
+  "vodka",
+  "black",
+  "jameson",
+];
+
+const init = () => {
   dynaChoices = [];
-  midTownHots.forEach((i) => dynaChoices.push(capitalized(i)));
+  displayChoices(dynaChoices);
+};
+
+const pushMid = (ranArr) => {
+  dynaChoices = [];
+  ranArr.forEach((i) => dynaChoices.push(capitalized(i)));
   displayChoices(dynaChoices);
 };
 
@@ -99,7 +118,17 @@ const loopResult = function () {
   }, 100);
 };
 
-midbut.addEventListener("click", pushMid);
+init();
+midbut.addEventListener("click", () => {
+  pushMid(midTownHots);
+  btn.forEach((e) => e.classList.remove("active"));
+  midbut.classList.add("active");
+});
+ethbut.addEventListener("click", () => {
+  pushMid(ethyl);
+  btn.forEach((e) => e.classList.remove("active"));
+  ethbut.classList.add("active");
+});
 addbtn.addEventListener("click", addItem);
 removebtn.addEventListener("click", removeItem);
 randombtn.addEventListener("click", () => {

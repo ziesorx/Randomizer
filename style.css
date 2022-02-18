@@ -120,7 +120,16 @@
   padding: 0.2rem 8rem;
 }
 
-.mid-button {
+.btn.active {
+  background-color: #eb2222;
+  border: solid 0.1rem black;
+}
+.btn.active:hover {
+  background-color: #921b1b;
+  border: solid 0.1rem black;
+}
+
+.btn {
   background-color: #4af3a1;
   border: black;
   color: white;
@@ -133,6 +142,13 @@
 }
 
 .mid-button:hover {
+  background-color: #37bb7b;
+}
+
+.eth-button {
+  background-color: #bd13bd;
+}
+.eth-button:hover {
   background-color: #37bb7b;
 }
 
