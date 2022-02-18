@@ -9,16 +9,6 @@ const choice = document.querySelector(".choices__list");
 const midbut = document.querySelector(".mid-button");
 const rigged = ["pranakorn boat noodle"];
 
-// const choicesList = [
-//   'ramen',
-//   'bonchon',
-//   'karayama',
-//   'shinkansen',
-//   'pepper Lunch',
-//   'Food court',
-//   'Swensen',
-// ];
-
 let dynaChoices = [];
 const midTownHots = [
   "mk",
@@ -44,10 +34,11 @@ const midTownHots = [
   "korean town",
   "coco ichibanya",
 ];
+const ethyl = [];
 
 const pushMid = () => {
   dynaChoices = [];
-  midTownHots.forEach((i) => dynaChoices.push(i));
+  midTownHots.forEach((i) => dynaChoices.push(capitalized(i)));
   displayChoices(dynaChoices);
 };
 
@@ -86,7 +77,7 @@ const removeItem = function (e) {
     inputNewItem.value !== "" &&
     dynaChoices.some((choice) => capitalized(inputNewItem.value) === choice)
   ) {
-    dynaChoices.splice(1, dynaChoices.indexOf(capitalized(inputNewItem.value)));
+    dynaChoices.splice(dynaChoices.indexOf(capitalized(inputNewItem.value)), 1);
   }
   inputNewItem.value = "";
   displayChoices(dynaChoices);
