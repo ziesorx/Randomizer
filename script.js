@@ -1,3 +1,5 @@
+// import ethyl from "database.js";
+// ethyl = require("database.js");
 let res;
 let ran;
 const addbtn = document.querySelector(".newItem__btn");
@@ -9,7 +11,8 @@ const choice = document.querySelector(".choices__list");
 const midbut = document.querySelector(".mid-button");
 const btn = document.querySelectorAll(".btn");
 const ethbut = document.querySelector(".eth-button");
-const clear = document.querySelector(".clear-button");
+const clearbut = document.querySelector(".clear-button");
+const sweetbut = document.querySelector(".midSweets-button");
 
 const rigged = ["pranakorn boat noodle"];
 
@@ -51,6 +54,10 @@ const ethyl = [
   "jameson",
 ];
 
+const midTownColds = ["Swensen's"];
+
+const terminal = ["popcorn"];
+
 const init = () => {
   dynaChoices = [];
   displayChoices(dynaChoices);
@@ -61,7 +68,7 @@ const clearDis = () => {
   displayChoices(dynaChoices);
 };
 
-const pushMid = (ranArr) => {
+const pushList = (ranArr) => {
   dynaChoices = [];
   ranArr.forEach((i) => dynaChoices.push(capitalized(i)));
   displayChoices(dynaChoices);
@@ -125,16 +132,24 @@ const loopResult = function () {
 };
 
 init();
-clear.addEventListener("click", clearDis());
+clearbut.addEventListener("click", () => {
+  clearDis();
+  btn.forEach((e) => e.classList.remove("active"));
+});
 midbut.addEventListener("click", () => {
-  pushMid(midTownHots);
+  pushList(midTownHots);
   btn.forEach((e) => e.classList.remove("active"));
   midbut.classList.add("active");
 });
 ethbut.addEventListener("click", () => {
-  pushMid(ethyl);
+  pushList(ethyl);
   btn.forEach((e) => e.classList.remove("active"));
   ethbut.classList.add("active");
+});
+sweetbut.addEventListener("click", () => {
+  pushList(midTownColds);
+  btn.forEach((e) => e.classList.remove("active"));
+  sweetbut.classList.add("active");
 });
 addbtn.addEventListener("click", addItem);
 removebtn.addEventListener("click", removeItem);
