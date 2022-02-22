@@ -1,3 +1,5 @@
+import * as data from "/database.js";
+
 // import ethyl from "database.js";
 // ethyl = require("database.js");
 let res;
@@ -15,48 +17,9 @@ const clearbut = document.querySelector(".clear-button");
 const sweetbut = document.querySelector(".midSweets-button");
 
 const rigged = ["pranakorn boat noodle"];
+const activate = false;
 
 let dynaChoices = [];
-const midTownHots = [
-  "mk",
-  "pepper lunch",
-  "tenya",
-  "A-ramen",
-  "pizza company",
-  "hachiban",
-  "food court",
-  "taco bell",
-  "nitaya chicken",
-  "bonchon",
-  "shinkansen",
-  "real beef",
-  "kfc",
-  "yayoi",
-  "spicy house",
-  "bbq plaza",
-  "sushi hiro",
-  "tum muo",
-  "karayama",
-  "pranakorn boat noodle",
-  "korean town",
-  "coco ichibanya",
-];
-
-const ethyl = [
-  "red",
-  "soju",
-  "beer",
-  "285",
-  "regency",
-  "tequila",
-  "vodka",
-  "black",
-  "jameson",
-];
-
-const midTownColds = ["Swensen's"];
-
-const terminal = ["popcorn"];
 
 const init = () => {
   dynaChoices = [];
@@ -65,6 +28,7 @@ const init = () => {
 
 const clearDis = () => {
   dynaChoices = [];
+  result.textContent = "";
   displayChoices(dynaChoices);
 };
 
@@ -124,10 +88,11 @@ const loopResult = function () {
     i++;
     if (i < 20) {
       loopResult();
+    } else {
+      if (activate) {
+        randomEl(rigged);
+      }
     }
-    // else {
-    //   randomEl(rigged);
-    // }
   }, 100);
 };
 
@@ -137,17 +102,17 @@ clearbut.addEventListener("click", () => {
   btn.forEach((e) => e.classList.remove("active"));
 });
 midbut.addEventListener("click", () => {
-  pushList(midTownHots);
+  pushList(data.midTownHots);
   btn.forEach((e) => e.classList.remove("active"));
   midbut.classList.add("active");
 });
 ethbut.addEventListener("click", () => {
-  pushList(ethyl);
+  pushList(data.ethyl);
   btn.forEach((e) => e.classList.remove("active"));
   ethbut.classList.add("active");
 });
 sweetbut.addEventListener("click", () => {
-  pushList(midTownColds);
+  pushList(data.midTownColds);
   btn.forEach((e) => e.classList.remove("active"));
   sweetbut.classList.add("active");
 });
